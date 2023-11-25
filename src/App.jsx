@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './homepage/Home.jsx';
-import Navbar from './navbar/Navbar.jsx';
+import Navbar from './components/navbar/Navbar.jsx';
 import Settings from './settingspage/Settings.jsx';
 import Footer from './footer/Footer.jsx';
 import Welcome from './welcomepage/Welcome.jsx';
@@ -45,7 +45,7 @@ function App() {
       root.style.setProperty(key, themes[theme][key]);
     }
     root.style.setProperty('--primary-color', primaryColors[primaryColor]);
-  }, []);
+  });
 
   return (
     <BrowserRouter>
@@ -55,7 +55,7 @@ function App() {
           <Route path="/" element={<Home />} />
           {/* <Route path="/welcome" element={<Welcome />} /> */}
           <Route path="/settings" element={<Settings />} />
-          <Route path="/liked" element={<main></main>} />
+          <Route path="/saved" element={<main></main>} />
           {/* <Route path="/liked-recipes" element={<LikedRecipes />} /> */}
         </Routes>
       </main>

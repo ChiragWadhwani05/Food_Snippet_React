@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Searchbox from '../searchbox/SearchBox';
-import RecipeCard from '../recipecard/RecipeCard';
+import RecipeCard from '../components/recipecard/RecipeCard';
 import './homepage.css';
 function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -30,6 +30,7 @@ function Home() {
               key={recipe.idMeal}
               name={recipe.strMeal}
               imageUrl={recipe.strMealThumb}
+              area={recipe.strArea}
             />
           ))}
         </div>

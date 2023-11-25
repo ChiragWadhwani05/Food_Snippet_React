@@ -15,11 +15,11 @@ function footer() {
         <div className="footer-content">
           <h3>Food Snippet</h3>
           <p>
-            "FoodSnippet is a website where you can find a world of culinary
+            FoodSnippet is a website where you can find a world of culinary
             delights at your fingertips. Explore an extensive collection of
             mouthwatering recipes, discover new flavors, and share your love for
             food with our vibrant community. Join us on a delicious journey
-            today!"
+            today!
           </p>
           <div className="socials">
             <Link

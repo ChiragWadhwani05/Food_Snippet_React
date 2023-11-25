@@ -1,16 +1,5 @@
 /* src/css/welcome.css */
 
-/* Body styles to create a dark background */
-body {
-  background-color: #333;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
 /* Container styles */
 .welcome {
   text-align: center;

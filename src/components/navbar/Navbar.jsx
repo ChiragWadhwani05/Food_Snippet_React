@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faHeart, faGear } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faGear, faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
   return (
@@ -16,9 +16,9 @@ function Navbar() {
           </Link>
         </div>
         <div className="navbar-links">
-          <Link to="/liked" className="navbar-option">
-            <FontAwesomeIcon icon={faHeart} />
-            <span className="icon-label">Liked</span>
+          <Link to="/saved" className="navbar-option">
+            <FontAwesomeIcon icon={faBookmark} />
+            <span className="icon-label">Saved</span>
           </Link>
           <Link to="/settings" className="navbar-option">
             <FontAwesomeIcon icon={faGear} />
