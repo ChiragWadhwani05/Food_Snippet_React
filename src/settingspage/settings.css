@@ -1,0 +1,66 @@
+.settings-container {
+    margin: 1rem auto 4rem auto;
+    width: 100%;
+    max-width: 700px;
+    color: var(--text-color);
+  }
+  
+  .settings {
+    margin-top: 1em;
+    text-align: center;
+  }
+  .settings-options {
+    margin-top: 3em;
+    /* background-color: var(--baclground-color); */
+  }
+  .theme-options {
+    box-shadow: 0 5px 10px var(--shadow-color);
+    padding: 1em;
+    border-radius: 5px;
+    border-left: 0.5em solid var(--primary-color);
+    color: var(--baclground-color);
+    display: flex;
+    gap: 1em;
+    margin-top: 1em;
+  }
+  
+  .settings-label {
+    font-size: 1.3em;
+  }
+  .settings-check {
+    height: 2.5em;
+    width: 2.5em;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .theme {
+    border-radius: 10px;
+    height: 3.5em;
+    width: 3.5em;
+    box-shadow: 0 3px 6px var(--shadow-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .light {
+    background-color: #ebebeb;
+    border: 1px solid #000;
+  }
+  .dark {
+    background-color: rgb(29, 29, 29);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .settings-container {
+      flex: 1;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 350px;
+    }
+  }
+  

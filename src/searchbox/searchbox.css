@@ -1,0 +1,67 @@
+.search-area {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background-image: url('../../public/Images/[Downloader.la]-6507195363a71.jpg');
+    background-color: #2c2c2c;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    display: flex ;
+    justify-content: center;
+    text-align: center; /* Center the content horizontally */
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color); /* Semi-transparent white background */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px var(--shadow-color);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  #search-input {
+    color: var(--text-color);
+    background-color: var(--background-light);
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .search-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  .search-button:hover{
+  /* border: 1px solid var(--primary-color); */
+  background-color: #fff;
+  color: #000000;
+  
+  }
+  
+  .quote-box {
+    margin-top: 50px; /* Add space between search bar and quote */
+    position: absolute;
+    bottom: 10%;
+  }
+  
+  .quote-text {
+    margin: 0;
+    font-style: italic;
+    font-size: 24px;
+    color: #ffffff; /* White text color */
+  }

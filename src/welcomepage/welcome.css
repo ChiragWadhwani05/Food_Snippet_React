@@ -1,0 +1,65 @@
+/* src/css/welcome.css */
+
+/* Body styles to create a dark background */
+body {
+  background-color: #333;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Container styles */
+.welcome {
+  text-align: center;
+}
+
+/* Heading styles */
+.welcome h1 {
+  font-size: 2rem;
+  color: #fff; /* White text color */
+  margin-bottom: 10px;
+}
+
+/* Paragraph styles */
+.welcome p {
+  font-size: 1.2rem;
+  color: #fff; /* White text color */
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+.welcome #btn {
+  background-color: #00863a; /* Green button color */
+  color: #fff; /* White text color */
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.welcome #btn:hover {
+  background-color: #005726; /* Darker green on hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .welcome {
+    padding: 10px;
+  }
+  .welcome h1 {
+    font-size: 1.5rem;
+  }
+  .welcome p {
+    font-size: 1rem;
+  }
+  .welcome button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
