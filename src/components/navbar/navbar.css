@@ -1,4 +1,3 @@
-
 /* Navbar styles */
 .navbar {
   height: 55px;
@@ -9,19 +8,19 @@
   align-items: center;
   justify-content: space-between;
 
-  .navbar-brand{
+  .navbar-brand {
     font-size: 1.9em;
     font-weight: bolder;
     color: var(--primary-color);
     text-decoration: none;
     text-shadow: 0 1px 3px var(--shadow-color);
 
-      .nav-oo{
-        color: var(--text-color);
-      }
+    .nav-oo {
+      color: var(--text-color);
+    }
   }
 
-  .navbar-option{
+  .navbar-option {
     font-size: 1.2em;
     margin-left: 1em;
     text-decoration: none;
@@ -29,50 +28,46 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     position: relative;
-      .icon-label{
-        padding: 4px;
+    .icon-label {
+      padding: 4px;
+    }
+    &::before {
+      content: '';
+      display: inline-block;
+      height: 3px;
+      width: 100%;
+      background-color: var(--primary-color);
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      transform: scaleX(0);
+      transition: transform calc(0.3 * 0.5s) ease-in-out;
+    }
+    &:hover {
+      &::before {
+        transform: scaleX(1);
       }
-      &::before{
-        content: '';
-        display: inline-block;
-        height: 3px;
-        width: 100%;
-        background-color: var(--primary-color);
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        transform: scaleX(0);
-        transition: transform calc(0.3*0.5s) ease-in-out;
-      }
-      &:hover{
-        &::before{
-          transform: scaleX(1);
-        }
-      }
-      &.active{
-        color: var(--primary-color);
-        font-weight: bold;  
-      }
+    }
+    &.active {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
   }
 }
-.nav-container{
-  padding-inline: 8vw ;
+.nav-container {
+  padding-inline: 8vw;
 }
 
 @media screen and (max-width: 768px) {
-  .icon-label{
+  .icon-label {
     display: none;
   }
 
-  .navbar{
+  .navbar {
     height: 50px;
   }
-  .navbar{
-
-    .navbar-brand{
-      font-size: 1.5em;
-    }
-
+  .navbar-options,
+  .navbar-brand {
+    font-size: 1.5em;
   }
-
 }
