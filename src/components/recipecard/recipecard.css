@@ -61,8 +61,7 @@
 }
 
 .like-button {
-  /* background-color: var(--primary-color);
-  color: var(--text-color); */
+  background-color: var(--primary-color);
   border: none;
   border-radius: 5px;
   padding: 8px 12px;

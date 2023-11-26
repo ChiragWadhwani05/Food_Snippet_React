@@ -9,6 +9,7 @@ function recipecard({ name, imageUrl, recipe, area }) {
     // Store recipe data in local storage
     localStorage.setItem('recipeData', JSON.stringify(recipe));
   };
+
   return (
     <Link to="/recipe">
       <div className="recipe-card" onClick={() => handleRecipeClick(recipe)}>
