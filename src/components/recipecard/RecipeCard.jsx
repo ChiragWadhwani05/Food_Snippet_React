@@ -9,11 +9,11 @@ function Recipecard({ idMeal, name, imageUrl, recipe, area }) {
     localStorage.setItem('recipeData', JSON.stringify(recipe));
   };
 
-  const savedRecipeIds =
-    JSON.parse(localStorage.getItem('savedRecipeIds')) || [];
+  let savedRecipeIds = JSON.parse(localStorage.getItem('savedRecipeIds')) || [];
   const [isSaved, setIsSaved] = useState(savedRecipeIds.includes(idMeal));
 
-  const handleSaveClick = () => {
+  function handleSaveClick() {
+    savedRecipeIds = JSON.parse(localStorage.getItem('savedRecipeIds')) || [];
     const updatedSavedRecipeIds = isSaved
       ? savedRecipeIds.filter((savedId) => savedId !== idMeal)
       : [...savedRecipeIds, idMeal];
@@ -23,7 +23,7 @@ function Recipecard({ idMeal, name, imageUrl, recipe, area }) {
       'savedRecipeIds',
       JSON.stringify(updatedSavedRecipeIds)
     );
-  };
+  }
 
   return (
     <div className="recipe-card" onClick={handleRecipeClick}>

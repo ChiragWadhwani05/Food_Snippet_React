@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faGear, faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
+  const [wow, setWow] = useState(true);
+
   return (
     <div>
       <nav className="navbar nav-container">
@@ -16,15 +18,39 @@ function Navbar() {
           </Link>
         </div>
         <div className="navbar-links">
-          <Link to="/saved" className="navbar-option">
+          <Link
+            to="/saved"
+            className={
+              window.location.pathname === '/saved'
+                ? 'active navbar-option'
+                : 'navbar-option'
+            }
+            onClick={() => setWow(!wow)}
+          >
             <FontAwesomeIcon icon={faBookmark} />
             <span className="icon-label">Saved</span>
           </Link>
-          <Link to="/settings" className="navbar-option">
+          <Link
+            to="/settings"
+            className={
+              window.location.pathname === '/settings'
+                ? 'active navbar-option'
+                : 'navbar-option'
+            }
+            onClick={() => setWow(!wow)}
+          >
             <FontAwesomeIcon icon={faGear} />
             <span className="icon-label">Settings</span>
           </Link>
-          <Link to="/" className="navbar-option">
+          <Link
+            to="/"
+            className={
+              window.location.pathname === '/'
+                ? 'active navbar-option'
+                : 'navbar-option'
+            }
+            onClick={() => setWow(!wow)}
+          >
             <FontAwesomeIcon icon={faHome} />
             <span className="icon-label">Home</span>
           </Link>

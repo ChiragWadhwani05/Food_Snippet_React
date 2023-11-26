@@ -29,9 +29,9 @@ function SavedRecipes() {
     <div className="saved-recipes-main">
       <h1>Saved Recipes</h1>
       <div className="saved-recipes-container">
-        {savedRecipeData.map((recipe, index) => (
+        {savedRecipeData.map((recipe) => (
           <Recipecard
-            key={index}
+            key={recipe.idMeal}
             idMeal={recipe.idMeal}
             name={recipe.strMeal}
             imageUrl={recipe.strMealThumb}
