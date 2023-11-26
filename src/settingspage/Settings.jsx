@@ -28,7 +28,7 @@ const themes = [
 
 function Settings() {
   const savedTheme = localStorage.getItem('theme') || 0; // Default to 0 if not found
-  const savedPrimaryColor = localStorage.getItem('primaryColor') || 2; // Default to 2 if not found
+  const savedPrimaryColor = localStorage.getItem('primaryColor') || 0; // Default to 0 if not found
 
   const [theme, setTheme] = useState(Number(savedTheme));
   const [primaryColor, setPrimaryColor] = useState(Number(savedPrimaryColor));

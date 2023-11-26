@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './searchbox.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -6,10 +6,18 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 function SearchBox({ onInputChange }) {
   const [inputValue, setInputValue] = useState('');
 
+  useEffect(() => {
+    const previousSearchValue = localStorage.getItem('searchValue');
+    if (previousSearchValue) {
+      setInputValue(previousSearchValue);
+    }
+  }, []); // Empty dependency array means this effect runs once after the first render
+
   const handleInputChange = (e) => {
     const value = e.target.value;
     setInputValue(value);
-    onInputChange(value); // Pass the value to the parent component
+    localStorage.setItem('searchValue', value);
+    onInputChange(value);
   };
 
   const handleSearch = () => {

@@ -61,12 +61,14 @@
 }
 
 .like-button {
-  background-color: var(--primary-color);
   border: none;
   border-radius: 5px;
   padding: 8px 12px;
   cursor: pointer;
   height: 36px;
+}
+.saved {
+  background-color: var(--primary-color);
 }
 .like-button:hover {
   background-color: var(--primary-color);

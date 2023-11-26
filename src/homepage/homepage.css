@@ -10,9 +10,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* margin-top: 20px; */
-  /* overflow: auto;
-  max-height: 500px; */
   gap: 40px;
 }
 

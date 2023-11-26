@@ -7,6 +7,7 @@ import Settings from './settingspage/Settings.jsx';
 import Footer from './footer/Footer.jsx';
 import Welcome from './welcomepage/Welcome.jsx';
 import Recipe from './components/recipe/Recipe.jsx';
+import SavedRecipes from './SavedRecipes/SavedRecipes.jsx';
 
 const primaryColors = [
   'rgb(255, 0, 86)',
@@ -56,7 +57,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/recipe" element={<Recipe />} />
           <Route path="/settings" element={<Settings />} />
-          <Route path="/saved" element={<main></main>} />
+          <Route path="/saved" element={<SavedRecipes />} />
           {/* <Route path="/liked-recipes" element={<LikedRecipes />} /> */}
         </Routes>
       </main>
