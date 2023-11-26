@@ -1,0 +1,55 @@
+/* Add this CSS to your existing styles */
+
+.recipe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 10px;
+  font-size: larger;
+  justify-content: space-between;
+  color: var(--text-color);
+}
+
+.recipe-image-name {
+  text-align: center;
+}
+
+.crrRecipe-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px; /* Add border-radius for a rounded image */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the image */
+}
+.highlighted {
+  color: var(--primary-color);
+}
+.recipe-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+.recipe-ingredients {
+  margin-top: 20px;
+}
+
+/* Adjustments for larger screens using media queries */
+@media (min-width: 600px) {
+  .recipe-container {
+    flex-direction: row;
+  }
+
+  .recipe-image-name {
+    width: 50%;
+    padding-right: 20px; /* Add space between image and text on larger screens */
+  }
+
+  .recipe-details {
+    align-items: flex-start;
+    width: 50%;
+    padding: 30px 20px; /* Adjust padding on larger screens */
+  }
+}

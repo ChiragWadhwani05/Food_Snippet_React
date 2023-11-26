@@ -24,13 +24,14 @@ function Home() {
       <Searchbox onInputChange={handleInputChange} />
       <div className="home-main">
         <h1>Searched Recipes</h1>
-        <div className="recipe-container">
+        <div className="recipes-container">
           {recipes.map((recipe) => (
             <RecipeCard
               key={recipe.idMeal}
               name={recipe.strMeal}
               imageUrl={recipe.strMealThumb}
               area={recipe.strArea}
+              recipe={recipe}
             />
           ))}
         </div>
