@@ -6,20 +6,18 @@ import './homepage.css';
 function Home() {
   const [recipes, setRecipes] = useState([]);
   const [recipeFound, setRecipeFound] = useState(true);
+
   const handleInputChange = (value) => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`)
       .then((response) => response.json())
       .then((data) => {
         setRecipes(data.meals || []);
-        if (data.meals === null) {
-          setRecipeFound(false);
-        } else {
-          setRecipeFound(true);
-        }
+        setRecipeFound(data.meals !== null);
       })
       .catch((error) => {
         console.error('Error fetching recipes:', error);
         setRecipes([]);
+        setRecipeFound(false);
       });
   };
 
@@ -39,6 +37,7 @@ function Home() {
           {!recipeFound && <h1>No recipes found</h1>}
           {recipes.map((recipe) => (
             <RecipeCard
+              idMeal={recipe.idMeal}
               key={recipe.idMeal}
               name={recipe.strMeal}
               imageUrl={recipe.strMealThumb}

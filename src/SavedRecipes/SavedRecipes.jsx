@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Recipecard from '../components/recipecard/RecipeCard';
 import './savedrecipes.css';
+
 function SavedRecipes() {
-  // Retrieve saved recipes from local storage
-  const savedRecipeData = JSON.parse(localStorage.getItem('savedRecipe')) || [];
+  const savedRecipeIds =
+    JSON.parse(localStorage.getItem('savedRecipeIds')) || [];
+  const [savedRecipeData, setSavedRecipeData] = useState([]);
+
+  useEffect(() => {
+    const fetchSavedRecipes = async () => {
+      const promises = savedRecipeIds.map((recipeId) =>
+        fetch(
+          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`
+        )
+          .then((response) => response.json())
+          .then((data) => data.meals[0])
+      );
+      const recipes = await Promise.all(promises);
+      setSavedRecipeData(recipes);
+    };
+
+    if (savedRecipeIds.length > 0) {
+      fetchSavedRecipes();
+    }
+  }, [savedRecipeIds]);
 
   return (
     <div className="saved-recipes-main">
@@ -11,11 +31,12 @@ function SavedRecipes() {
       <div className="saved-recipes-container">
         {savedRecipeData.map((recipe, index) => (
           <Recipecard
-            key={index} // You may use a unique key based on your data
-            name={recipe.strMeal} // Update with the correct property
-            imageUrl={recipe.strMealThumb} // Update with the correct property
-            recipe={recipe} // Pass the entire recipe object if needed
-            area={recipe.strArea} // Update with the correct property
+            key={index}
+            idMeal={recipe.idMeal}
+            name={recipe.strMeal}
+            imageUrl={recipe.strMealThumb}
+            recipe={recipe}
+            area={recipe.strArea}
           />
         ))}
       </div>

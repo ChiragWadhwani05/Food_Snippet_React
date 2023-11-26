@@ -48,7 +48,6 @@ function App() {
     }
     root.style.setProperty('--primary-color', primaryColors[primaryColor]);
   });
-
   return (
     <BrowserRouter>
       <Navbar />

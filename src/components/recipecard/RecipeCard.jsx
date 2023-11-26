@@ -4,29 +4,29 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
-function Recipecard({ name, imageUrl, recipe, area }) {
-  const handleRecipeClick = (recipe) => {
-    // Store recipe data in local storage
+function Recipecard({ idMeal, name, imageUrl, recipe, area }) {
+  const handleRecipeClick = () => {
     localStorage.setItem('recipeData', JSON.stringify(recipe));
   };
 
-  const savedRecipe = JSON.parse(localStorage.getItem('savedRecipe')) || [];
-  const [isSaved, setIsSaved] = useState(savedRecipe.includes(recipe));
+  const savedRecipeIds =
+    JSON.parse(localStorage.getItem('savedRecipeIds')) || [];
+  const [isSaved, setIsSaved] = useState(savedRecipeIds.includes(idMeal));
 
   const handleSaveClick = () => {
-    // Toggle the save state
+    const updatedSavedRecipeIds = isSaved
+      ? savedRecipeIds.filter((savedId) => savedId !== idMeal)
+      : [...savedRecipeIds, idMeal];
+
     setIsSaved(!isSaved);
-
-    // Update the saved recipes in local storage
-    const updatedSavedRecipe = isSaved
-      ? savedRecipe.filter((saved) => saved !== recipe)
-      : [...savedRecipe, recipe];
-
-    localStorage.setItem('savedRecipe', JSON.stringify(updatedSavedRecipe));
+    localStorage.setItem(
+      'savedRecipeIds',
+      JSON.stringify(updatedSavedRecipeIds)
+    );
   };
 
   return (
-    <div className="recipe-card" onClick={() => handleRecipeClick(recipe)}>
+    <div className="recipe-card" onClick={handleRecipeClick}>
       <Link to="/recipe">
         <img src={imageUrl} alt={name} className="recipe-card-image" />
       </Link>
@@ -36,7 +36,7 @@ function Recipecard({ name, imageUrl, recipe, area }) {
           <h4 className="recipe-card-area">{area}</h4>
         </div>
         <button
-          type="submit"
+          type="button"
           className={`like-button ${isSaved ? 'saved' : ''}`}
           onClick={handleSaveClick}
         >
