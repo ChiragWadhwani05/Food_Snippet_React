@@ -5,12 +5,17 @@ import './homepage.css';
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
-
+  const [recipeFound, setRecipeFound] = useState(true);
   const handleInputChange = (value) => {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`)
       .then((response) => response.json())
       .then((data) => {
         setRecipes(data.meals || []);
+        if (data.meals === null) {
+          setRecipeFound(false);
+        } else {
+          setRecipeFound(true);
+        }
       })
       .catch((error) => {
         console.error('Error fetching recipes:', error);
@@ -31,7 +36,7 @@ function Home() {
       <div className="home-main">
         <h1>Searched Recipes</h1>
         <div className="recipes-container">
-          {recipes.length === 0 && <h1>No recipes found.</h1>}
+          {!recipeFound && <h1>No recipes found</h1>}
           {recipes.map((recipe) => (
             <RecipeCard
               key={recipe.idMeal}
