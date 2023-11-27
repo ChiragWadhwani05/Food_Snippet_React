@@ -6,6 +6,7 @@ import Navbar from './components/navbar/Navbar.jsx';
 import Settings from './settingspage/Settings.jsx';
 import Footer from './footer/Footer.jsx';
 import Welcome from './welcomepage/Welcome.jsx';
+import License from './License/License.jsx';
 import Recipe from './components/recipe/Recipe.jsx';
 import SavedRecipes from './SavedRecipes/SavedRecipes.jsx';
 
@@ -57,7 +58,7 @@ function App() {
           <Route path="/recipe" element={<Recipe />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/saved" element={<SavedRecipes />} />
-          {/* <Route path="/liked-recipes" element={<LikedRecipes />} /> */}
+          <Route path="/LICENSE" element={<License />} />
         </Routes>
       </main>
       <Footer />

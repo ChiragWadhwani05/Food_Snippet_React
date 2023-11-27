@@ -1,0 +1,15 @@
+.license-page {
+  color: var(--text-color);
+  font-size: x-large;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.license-text {
+  color: var(--primary-color);
+  font-size: larger;
+}
+#license-links {
+  text-decoration: none;
+  color: var(--primary-color);
+}

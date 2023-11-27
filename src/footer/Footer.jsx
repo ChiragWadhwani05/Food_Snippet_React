@@ -22,7 +22,7 @@ function footer() {
             today!
           </p>
           <div className="socials">
-            {/* <Link
+            <Link
               to="https://www.instagram.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -30,7 +30,7 @@ function footer() {
               id="footer-link"
             >
               <FontAwesomeIcon icon={faInstagram} />
-            </Link> */}
+            </Link>
             <Link
               to="https://github.com/ChiragWadhwani05"
               target="_blank"
@@ -59,18 +59,20 @@ function footer() {
               <FontAwesomeIcon icon={faFacebook} />
             </Link> */}
           </div>
-          <p>
-            This work is licensed under the{' '}
-            <a
-              href="./LICENSE"
-              target="_blank"
-              rel="noopener noreferrer"
-              id="footer-link"
-            >
-              MIT License
-            </a>
-            .
-          </p>
+          {window.location.pathname !== '/LICENSE' ? (
+            <p>
+              This work is licensed under the{' '}
+              <a
+                href="./LICENSE"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="footer-link"
+              >
+                MIT License
+              </a>
+              .
+            </p>
+          ) : null}
         </div>
         <div className="footer-bottom">
           <p>
