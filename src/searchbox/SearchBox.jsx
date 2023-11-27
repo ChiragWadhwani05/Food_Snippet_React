@@ -5,12 +5,14 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 function SearchBox({ onInputChange }) {
   const [inputValue, setInputValue] = useState('');
+  const [prevSearchVal, setprevSearchVal] = useState('');
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
+    setprevSearchVal(e.target.value);
   };
 
   const handleSearch = () => {
-    // Do something with the inputValue, if needed
+    localStorage.setItem('prevSearchVal', prevSearchVal);
     onInputChange(inputValue);
   };
 

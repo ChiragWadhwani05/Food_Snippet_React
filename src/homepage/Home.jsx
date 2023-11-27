@@ -22,6 +22,13 @@ function Home() {
       });
   };
 
+  useEffect(() => {
+    const previousSearchValue = localStorage.getItem('prevSearchVal');
+    if (previousSearchValue) {
+      handleInputChange(previousSearchValue);
+    }
+  }, []); // Empty dependency array means this effect runs once after the first render
+
   return (
     <>
       <SearchBox onInputChange={handleInputChange} />
