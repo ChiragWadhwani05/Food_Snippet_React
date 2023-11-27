@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SearchBox from '../searchbox/SearchBox';
 import RecipeCard from '../components/recipecard/RecipeCard';
 import './homepage.css';
+import FoodCategories from '../FoodCategories/FoodCategories';
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -21,16 +22,10 @@ function Home() {
       });
   };
 
-  useEffect(() => {
-    const previousSearchValue = localStorage.getItem('searchValue');
-    if (previousSearchValue) {
-      handleInputChange(previousSearchValue);
-    }
-  }, []); // Empty dependency array means this effect runs once after the first render
-
   return (
     <>
       <SearchBox onInputChange={handleInputChange} />
+      <FoodCategories onButtonClick={handleInputChange} />
       <div className="home-main">
         <h1>Searched Recipes</h1>
         <div className="recipes-container">
