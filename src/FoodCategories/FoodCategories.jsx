@@ -12,6 +12,10 @@ const foodCategories = [
   'Pizza',
 ];
 function FoodCategories({ onButtonClick }) {
+  function handleButtonClick(category) {
+    localStorage.setItem('prevSearchVal', category);
+    onButtonClick(category);
+  }
   return (
     <div className="food-categories-container">
       {foodCategories.map((category) => (
@@ -19,7 +23,7 @@ function FoodCategories({ onButtonClick }) {
           className="category-btn"
           key={category}
           type="button"
-          onClick={() => onButtonClick(category)}
+          onClick={() => handleButtonClick(category)}
         >
           {category}
         </button>
